@@ -38,6 +38,11 @@ const cartReducer = (state, action) => {
         items: updatedItems,
         totalAmount: Math.abs(state.totalAmount - item.price),
       };
+    case "SUBMIT":
+      return {
+        items: [],
+        totalAmount: 0,
+      };
     default:
       return state;
   }
@@ -53,11 +58,16 @@ const CartProvider = (props) => {
     dispatchCart({ type: "REMOVE", id: id });
   };
 
+  const clearOrderHandler = () => {
+    dispatchCart({ type: "SUBMIT" });
+  };
+
   const cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
+    clearOrder: clearOrderHandler,
   };
 
   return (

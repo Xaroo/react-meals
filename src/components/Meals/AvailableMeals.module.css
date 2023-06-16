@@ -10,6 +10,15 @@
   margin: 0;
   padding: 0;
 }
+.MealsLoading {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+.MealsError {
+  text-align: center;
+  color: rgb(236, 69, 27);
+}
 
 @keyframes meals-appear {
   from {

@@ -1,4 +1,3 @@
-import { useContext, useState } from "react";
 import React from "react";
 
 const CartContext = React.createContext({
@@ -6,6 +5,7 @@ const CartContext = React.createContext({
   totalAmount: 0,
   addItem: (item) => {},
   removeItem: (id) => {},
+  clearOrder: () => {},
 });
 
 export default CartContext;
